@@ -11,3 +11,11 @@ header a {
     background-color: #b0603f;
     border-color: #b0603f;
 }
+
+#menu-categorias{
+    background-color: #cecbc7;
+}
+
+#menu-categorias a {
+    color: #6d6b6b;
+}
