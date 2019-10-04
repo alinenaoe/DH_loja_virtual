@@ -1,12 +1,6 @@
 <?php
     $nomeSistema = "Nome da loja";
     $usuario = ["nome" => "Aline"];
-    $produtos = [
-        ["nome" => "Fullstack", "preco" => 3000, "duracao" => "5 meses", "img" => "img/img_curso_01.jpg"],
-        ["nome" => "Marketing Digital", "preco" => 1000, "duracao" => "4 meses", "img" => "img/img_curso_02.jpg"],
-        ["nome" => "UX Design", "preco" => 5000, "duracao" => "9 meses", "img" => "img/img_curso_03.jpg"]
-    ];
-
     $categorias = ["Cursos", "Palestras", "Artigos"]
 ?>
 
@@ -64,45 +58,31 @@
 
     <main>
         <section class="container">
-            <div class="card-deck mt-5">
-                <?php if(isset($produtos) && $produtos !=[]) {?>
-                    <?php foreach($produtos as $produto) {
-                        //aqui diz que cada item da array produtos é um produto
-                    ?>         
-                        <div class="card text-center" style="width: 18rem;">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $produto['nome'] ?></h5>
-                                <img src= <?php echo $produto["img"] ?> class="card-img-top" alt="...">
-                                <h5 class="mt-2 mb-2 text-muted"><?php echo "R$ ".$produto['preco'] ?></h5>
-                                <a href="carrinho.php?nomeProduto=<?php echo $produto['nome']; ?>" class="btn btn-primary">Comprar</a>
-                            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h1>Carrinho de compras</h1>
+                </div>
+                <div class="col-12">
+                    <div class="row card">
+                        <div class="col-12">
+                            <h3>Você está comprando o curso <?php echo $_GET["nomeProduto"]; ?></h3>
                         </div>
-                    <?php //e aqui fecha a orientação do foreach
-                    } ?>
-                <?php //fechando o if isset 
-                } else {?> 
-                <h3>Não há produtos cadastrados nesta seção</h3>
-                <?php } ?>
+                        <div class="col-lg-6 col-md-6">
+                            <form class="d-flex flex-column p-3" method="post" action="sucesso.php">
+                            <input type="text" name="nomeCompleto" placeholder="Digite seu nome completo">
+                            <input type="text" name="cpf" placeholder="000.000.000-00">
+                            <input type="number" name="numeroCartao" placeholder="Digite o número do cartão">
+                            <input type="date" name="validadeCartao" placeholder="MM/AA">
+                            <input type="number" name="codigoCartao" placeholder="Digite o CVV">
+                            <button type="submit" class="btn btn-success">Finalizar compra</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
+
     </main>
-
-
-     <!-- <?php
-        $nome = "Aline";
-        $usuario = ["Aline", "Naoe", 30];
-        // var_dump ($usuario);
-
-        $usuario[] = "jornalista";
-        echo "<br>";
-        //var_dump($usuario);
-        //echo $usuario [0 & 1];
-
-        echo "<h1>".$usuario[0]." "." ".$usuario[1]."</h1>";
-
-        //associativa
-        $usuarioDois = ["nome" => "Aline", "sobrenome" => "Naoe"];
-        //echo $usuarioDois ["sobrenome"];
-     ?> -->
 </body>
 </html>
