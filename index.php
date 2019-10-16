@@ -14,16 +14,16 @@
     include_once ("header.php");
 ?>
     <main>
-        <section class="container">
-            <div class="card-deck mt-5">
+        <section class="container mt-4">
+            <div class="row justify-content-between">
                 <?php if(isset($produtos) && $produtos !=[]) {?>
                     <?php foreach($produtos as $produto) {
                         //aqui diz que cada item da array produtos é um produto
                     ?>         
-                        <div class="card text-center" style="width: 18rem;">
+                        <div class="col-lg-3 card text-center">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $produto['nome'] ?></h5>
-                                <img src= <?php echo $produto["img"] ?> class="card-img-top" alt="...">
+                                <img src= <?php echo $produto["imagem"] ?> class="card-img-top" alt="...">
                                 <h5 class="mt-2 mb-2 text-muted"><?php echo "R$ ".$produto['preco'] ?></h5>
                                 <a href="carrinho.php?nomeProduto=<?php echo $produto['nome']; ?>" class="btn btn-primary">Comprar</a>
                             </div>

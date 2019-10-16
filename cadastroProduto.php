@@ -47,11 +47,11 @@ if($_POST) {
     $localTmp = $_FILES['imgProduto']['tmp_name'];
     $caminhoSalvo = 'img/'.$nomeImg;
     $deuCertoImagem = move_uploaded_file($localTmp, $caminhoSalvo);
-    exit;
+    // exit;
 
     // var_dump($_FILES);
     // exit; //para não continuar cadastrando
-    echo cadastrarProduto($_POST["nomeProduto"],$_POST["descProduto"], $_POST["imgProduto"],$_POST["precoProduto"]);
+    echo cadastrarProduto($_POST["nomeProduto"],$_POST["descProduto"], $caminhoSalvo, $_POST["precoProduto"]);
 }
 
 ?>
