@@ -1,0 +1,21 @@
+header a {
+    color: #6d6b6b;
+}
+
+.btn-primary {
+    background-color: #6d6b6b;
+    border-color: #6d6b6b;
+}
+
+.btn-primary:hover {
+    background-color: #b0603f;
+    border-color: #b0603f;
+}
+
+#menu-categorias{
+    background-color: #cecbc7;
+}
+
+#menu-categorias a {
+    color: #6d6b6b;
+}
