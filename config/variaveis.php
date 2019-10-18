@@ -9,9 +9,9 @@ session_start();
     //     ["nome" => "Marketing Digital", "preco" => 1000, "duracao" => "4 meses", "img" => "img/img_curso_02.jpg"],
     //     ["nome" => "UX Design", "preco" => 5000, "duracao" => "9 meses", "img" => "img/img_curso_03.jpg"]
     // ];
-    $nomeArquivo = "produto.json";
+    $nomeArquivo = __DIR__."/../produto.json";
     $produtos = json_decode(file_get_contents($nomeArquivo), true);
-
+    // echo $nomeArquivo;
 
     $categorias = ["Cursos", "Palestras", "Artigos"]
 ?>
